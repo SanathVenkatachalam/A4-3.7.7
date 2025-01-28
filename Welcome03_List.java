@@ -23,5 +23,18 @@ public class Welcome03_List {
             System.out.println("  " + ws.getId() + ": " + ws.getName());
          }
       }
+
+      double previousLat = 0.0;
+      String stationName ="";
+
+      for(WeatherStation ws : allstns){
+         previousLat = ws.getLatitude();
+         stationName = ws.getName();
+         if(ws.getLatitude() < previousLat){
+            previousLat = ws.getLatitude();
+            stationName = ws.getName();
+         }
+      }
+      System.out.println("Southern Most station: "+ stationName + " with latitude of " + previousLat);
    }
 }
