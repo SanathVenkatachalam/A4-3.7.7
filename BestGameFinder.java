@@ -1,16 +1,13 @@
-// BestGameFinder.java
 
-//Initialization
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.*;
 
-// Finds best game based on data.xml
+
 public class BestGameFinder {
     public static void main(String[] args) {
         try {
-            // chooses path
             File xmlFile = new File("data.xml");
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
@@ -35,7 +32,6 @@ public class BestGameFinder {
                     }
                 }
             }
-            // Prints the found data
             System.out.println("The best game based on global sales is: " + bestGame + " with " + highestSales + " million sales.");
         } catch (Exception e) {
             e.printStackTrace();
